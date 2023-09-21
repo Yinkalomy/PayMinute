@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS raw_data.wallets
 
 # =============================================== FOR STAR SCHEMA
 ft_customer_transactions = '''
-CREATE TABLE IF NOT EXISTS staging.ft_customer_transactions(
+CREATE TABLE IF NOT EXISTS staging_data.ft_customer_transactions(
     id BIGINT IDENTITY(1, 1)
     , transaction_id VARCHAR NOT NULL
     , date DATE
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS staging.ft_customer_transactions(
 '''
 
 dim_wallets = '''
-    CREATE TABLE IF NOT EXISTS staging.dim_wallets (
+    CREATE TABLE IF NOT EXISTS staging_data.dim_wallets (
         id BIGINT IDENTITY(1, 1)
         , wallet_id integer NOT NULL
         , owner_id integer
@@ -118,7 +118,7 @@ dim_wallets = '''
 '''
 
 dim_dates = '''
-    CREATE TABLE IF NOT EXISTS staging.dim_dates (
+    CREATE TABLE IF NOT EXISTS staging_data.dim_dates (
         id BIGINT IDENTITY(1, 1)
         , date DATE
         , year INT
@@ -130,7 +130,7 @@ dim_dates = '''
 '''
 
 dim_customer = '''
-CREATE TABLE IF NOT EXISTS staging.dim_customers (
+CREATE TABLE IF NOT EXISTS staging_data.dim_customers (
     id BIGINT IDENTITY(1, 1)
     , customer_id INT NOT NULL
     , name VARCHAR(18)
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS staging.dim_customers (
 '''
 
 dim_banks = '''
-CREATE TABLE IF NOT EXISTS staging.dim_banks
+CREATE TABLE IF NOT EXISTS staging_data.dim_banks
 (
     id BIGINT IDENTITY(1, 1)
     , bank_id integer NOT NULL

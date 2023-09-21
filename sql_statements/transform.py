@@ -1,6 +1,6 @@
 
 ft_customer_transactions = '''
-    INSERT INTO staging.ft_customer_transactions (
+    INSERT INTO staging_data.ft_customer_transactions (
         transaction_id
         , date
         , customer_id
@@ -22,7 +22,7 @@ ft_customer_transactions = '''
 '''
 
 dim_wallets = '''
-    INSERT INTO staging.dim_wallets (
+    INSERT INTO staging_data.dim_wallets (
         wallet_id
         , owner_id
         , wallet_number
@@ -50,7 +50,7 @@ dim_wallets = '''
 '''
 
 dim_dates = '''
-    INSERT INTO staging.dim_dates (
+    INSERT INTO staging_data.dim_dates (
         date
         , year
         , month
@@ -63,7 +63,7 @@ dim_dates = '''
 '''
 
 dim_customer = '''
-    INSERT INTO staging.dim_customers (
+    INSERT INTO staging_data.dim_customers (
     customer_id
     , name
     , email
@@ -96,7 +96,7 @@ dim_customer = '''
 '''
 
 dim_banks = '''
-INSERT INTO staging.dim_banks (
+INSERT INTO staging_data.dim_banks (
     bank_id
     , name
     , address
